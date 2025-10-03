@@ -1,59 +1,115 @@
-# MongoDB Fundamentals - Week 1
+📚 PLP Bookstore – MongoDB Project
+📖 Overview
 
-## Setup Instructions
+This project sets up a MongoDB database for a bookstore application.
+We implemented basic CRUD operations, advanced queries, aggregation pipelines, and indexing using MongoDB.
 
-Before you begin this assignment, please make sure you have the following installed:
+The project consists of:
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+A script to insert sample book data into MongoDB (insert_books.js)
 
-### Node.js Package Setup
+A file containing all MongoDB queries (queries.js)
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+Documentation (README.md) and a screenshot of MongoDB Compass/Atlas
 
-```bash
-# Initialize a package.json file
-npm init -y
+🛠️ Setup Instructions
+1. Install MongoDB
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+Option A: Install MongoDB Community Edition
+ locally.
 
-## Assignment Overview
+Option B: Use MongoDB Atlas
+ (free cluster).
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+2. Clone the repository
+git clone <your-repo-url>
+cd <your-repo-folder>
 
-## Submission
+3. Insert sample data
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+Run the script to populate the database with 12 books:
 
-## Getting Started
+node insert_books.js
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
 
-## Files Included
+This will:
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+Create database: plp_bookstore
 
-## Requirements
+Create collection: books
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Insert sample book documents
 
-## Resources
+4. Run queries
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Open MongoDB Shell:
+
+mongosh "mongodb://localhost:27017/plp_bookstore"
+
+
+Load queries:
+
+load("queries.js")
+
+📂 Files in this Project
+
+insert_books.js → Script to connect to MongoDB and insert 12 sample book documents.
+
+queries.js → Contains MongoDB queries for CRUD, advanced filtering, projections, sorting, pagination, aggregation, and indexing.
+
+README.md → Documentation of setup, usage, and project tasks.
+
+screenshot.png → Proof of MongoDB Compass/Atlas with the books collection.
+
+✅ Tasks Completed
+Task 1: MongoDB Setup
+
+Installed MongoDB (local/Atlas).
+
+Created database plp_bookstore.
+
+Created collection books.
+
+Task 2: Basic CRUD Operations
+
+Inserted 12 book documents with fields:
+title, author, genre, published_year, price, in_stock, pages, publisher.
+
+Implemented queries to:
+
+Find books by genre
+
+Find books published after a year
+
+Find books by author
+
+Update book price
+
+Delete book by title
+
+Task 3: Advanced Queries
+
+Find books in stock and published after 2010.
+
+Projection to show only title, author, and price.
+
+Sorting by price (ascending & descending).
+
+Pagination with limit() and skip().
+
+Task 4: Aggregation Pipelines
+
+Average price of books by genre.
+
+Author with the most books.
+
+Group books by publication decade.
+
+Task 5: Indexing
+
+Created an index on title.
+
+Created a compound index on author and published_year.
+
+
+
